@@ -39,7 +39,7 @@ client.on('chat',(channel,userstate,message,self)=>{
             
             if(queues.mode==ModeEnum.EVERYONE)
             {
-                vipbadge = userstate.badges;
+                let vipbadge = userstate.badges;
                 console.log(vipbadge);
                 if(queues.list.indexOf(userstate['username'])==-1)
                 {
@@ -89,7 +89,7 @@ client.on('chat',(channel,userstate,message,self)=>{
         const index = queues.list.indexOf(userstate['username']);
         if (index > -1) {
             queues.list.splice(index, 1);
-            client.say(channel,"@"+userstate['display-name']+ "has leaved the queue :(");
+            client.say(channel,"@"+userstate['display-name']+ " has left the queue :(");
         }
     }
     if(message=="!clear")
